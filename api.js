@@ -121,7 +121,7 @@ function getTotalDuration(feedings) {
     });
   }
 
-  return totalDuration.asHours();
+  return totalDuration.asHours().toFixed(2);
 }
 
 app.use(bodyParser.urlencoded({ extended: true }));
