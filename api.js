@@ -305,6 +305,12 @@ app.route("/changes/last").get(function(req, res) {
     });
 });
 
+app.route("/test").get(function(req, res) {
+  res.json({
+    test: true
+  });
+});
+
 app.listen(port);
 
 console.log("Server started on: " + port);
