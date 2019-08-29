@@ -307,7 +307,7 @@ function init(app, route) {
     queryBabyBuddy("feedings", 0, 1)
       .then(response => {
         res.json({
-          lastFeeding: response.data.results[0].end
+          lastFeeding: moment(response.data.results[0].end).fromNow()
         });
       })
       .catch(error => {
@@ -368,7 +368,7 @@ function init(app, route) {
     queryBabyBuddy("changes", 0, 1)
       .then(response => {
         res.json({
-          lastChange: response.data.results[0].time
+          lastChange: moment(response.data.results[0].time).fromNow()
         });
       })
       .catch(error => {
@@ -415,7 +415,7 @@ function init(app, route) {
     })
       .then(response => {
         res.json({
-          lastPuke: getNoteDate(response.data.results[0])
+          lastPuke: moment(getNoteDate(response.data.results[0])).fromNow()
         });
       })
       .catch(error => {
@@ -479,7 +479,7 @@ function init(app, route) {
     })
       .then(response => {
         res.json({
-          lastPump: getNoteDate(response.data.results[0])
+          lastPump: moment(getNoteDate(response.data.results[0])).fromNow()
         });
       })
       .catch(error => {
