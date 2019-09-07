@@ -1,8 +1,9 @@
 var axios = require("axios"),
   moment = require("moment"),
   config = require("config"),
-  token = config.babybuddy.token,
-  baseUrl = config.babybuddy.url;
+  babybuddyConfig = config.get("babybuddy"),
+  token = babybuddyConfig.token,
+  baseUrl = babybuddyConfig.url;
 
 const ax = axios.create({
   baseURL: baseUrl,

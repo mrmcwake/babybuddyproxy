@@ -1,3 +1,5 @@
+const config = require("config");
+const transmissionConfig = config.get("transmission");
 const TransmissionClient = require("transmission-promise");
 const Medusa = require("services/medusa");
 const moment = require("moment");
@@ -7,7 +9,7 @@ const config = require("config");
 class Transmission {
   constructor() {
     this.medusaClient = new Medusa();
-    this.transmissionClient = new TransmissionClient(config.transmission);
+    this.transmissionClient = new TransmissionClient(transmissionConfig);
   }
   getSession() {
     return this.transmissionClient.session();

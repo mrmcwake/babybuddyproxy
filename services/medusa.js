@@ -1,11 +1,12 @@
-var axios = require("axios");
-var config = require("config");
+const config = require("config");
+const medusaConfig = config.get("medusa");
+const axios = require("axios");
 
 class Medusa {
   constructor() {
     this.ax = axios.create({
-      baseURL: config.medusa.url,
-      headers: { "x-api-key": `${config.medusa.token}` }
+      baseURL: medusaConfig.url,
+      headers: { "x-api-key": `${medusaConfig.token}` }
     });
     this.api = "/api/v2/";
   }
