@@ -1,7 +1,8 @@
 var axios = require("axios"),
   moment = require("moment"),
-  token = "c7f43bad5bf33ec89df985ea1d21bd8c127b08f7",
-  baseUrl = "http://192.168.1.84:8000/api/";
+  config = require("config"),
+  token = config.babybuddy.token,
+  baseUrl = config.babybuddy.url;
 
 const ax = axios.create({
   baseURL: baseUrl,
