@@ -1,4 +1,4 @@
-const Transmission = require("services/transmission");
+const Transmission = require("../services/transmission");
 const transmission = new Transmission();
 
 function init(app, route) {

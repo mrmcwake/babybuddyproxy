@@ -1,4 +1,4 @@
-const Medusa = require("services/medusa");
+const Medusa = require("../services/medusa");
 const medusa = new Medusa();
 
 function init(app, route) {

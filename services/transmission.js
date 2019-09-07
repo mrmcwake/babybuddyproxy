@@ -1,10 +1,9 @@
 const config = require("config");
 const transmissionConfig = config.get("transmission");
 const TransmissionClient = require("transmission-promise");
-const Medusa = require("services/medusa");
+const Medusa = require("../services/medusa");
 const moment = require("moment");
 const tnp = require("torrent-name-parser");
-const config = require("config");
 
 class Transmission {
   constructor() {
